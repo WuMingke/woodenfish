@@ -3,11 +3,11 @@ export struct CommonButtonWrapper {
   // 是否有动画
   animate: boolean = true
   // 按钮ui
-  @BuilderParam contentUI: () => void
+  @BuilderParam contentUI: VoidCallback
   // 是否响应间隔
   useDebounce: boolean = true
   // 点击事件
-  onClickEvent: () => void = () => {
+  onClickEvent: VoidCallback = () => {
   }
   // 内部属性
   @State private isScale: boolean = false

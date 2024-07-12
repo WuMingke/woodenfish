@@ -1,0 +1,28 @@
+{
+  "routerMap": [
+    {
+      "name": "TestPage",
+      "pageSourceFile": "src/main/ets/pages/TestPage.ets",
+      "buildFunction": "TestPageBuilder",
+      "data": {
+        "description": "this is TestPage"
+      }
+    },
+    {
+      "name": "MainPage",
+      "pageSourceFile": "src/main/ets/pages/main/MainPage.ets",
+      "buildFunction": "MainPageBuilder",
+      "data": {
+        "description": "this is MainPage"
+      }
+    },
+    {
+      "name": "SettingsPage",
+      "pageSourceFile": "src/main/ets/pages/settings/SettingsPage.ets",
+      "buildFunction": "SettingsPageBuilder",
+      "data": {
+        "description": "this is SettingsPage"
+      }
+    }
+  ]
+}

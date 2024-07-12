@@ -1,20 +1,49 @@
-@Entry
+import { RiseAnimationOne } from '../animation/RiseAnimationOne';
+import { RiseAnimationTwo } from '../animation/RiseAnimationTwo';
+import { AppConstant } from '../constant/AppConstant';
+import { AppPageName } from '../constant/AppPageName';
+import { CommonButtonWrapper } from '../widget/CommonButtonWrapper';
+
+@Entry(LocalStorage.getShared())
 @Component
 struct Index {
-  @State message: string = 'Hello World';
+  // @State showRiseAnimationOne: boolean = false
+  @Provide('pageStack') pageStack: NavPathStack = new NavPathStack()
 
   build() {
-    RelativeContainer() {
-      Text(this.message)
-        .id('HelloWorld')
-        .fontSize(50)
-        .fontWeight(FontWeight.Bold)
-        .alignRules({
-          center: { anchor: '__container__', align: VerticalAlign.Center },
-          middle: { anchor: '__container__', align: HorizontalAlign.Center }
+    Column() {
+      Navigation(this.pageStack)
+        .onAppear(() => {
+          this.pageStack.pushPathByName(AppPageName.testPage, null)
         })
+        .hideNavBar(true)// .hideTitleBar(true)
+        .mode(NavigationMode.Stack)
+      // .margin({ top: this.topRectHeight })
+
+      // if (this.showRiseAnimationOne) {
+      //   RiseAnimationTwo({
+      //     showRiseAnimationTwo: this.showRiseAnimationOne,
+      //     content: "123123",
+      //   })
+      // }
+      //
+      // CommonButtonWrapper({
+      //   useDebounce: false, onClickEvent: () => {
+      //     if (!this.showRiseAnimationOne) {
+      //       this.showRiseAnimationOne = !this.showRiseAnimationOne
+      //     }
+      //   }
+      // }) {
+      //   Text('add')
+      //     .width(100)
+      //     .height(100)
+      //     .backgroundColor('green')
+      // }
+
     }
+    // .justifyContent(FlexAlign.End)
     .height('100%')
     .width('100%')
+    .backgroundColor('red')
   }
 }

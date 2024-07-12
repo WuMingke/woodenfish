@@ -32,6 +32,7 @@
         ]
       }
     ],
+    "routerMap": "$profile:router_map",
     "extensionAbilities": [
       {
         "name": "EntryBackupAbility",
