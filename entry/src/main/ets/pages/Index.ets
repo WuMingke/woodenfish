@@ -4,7 +4,9 @@ import { AppConstant } from '../constant/AppConstant';
 import { AppPageName } from '../constant/AppPageName';
 import { CommonButtonWrapper } from '../widget/CommonButtonWrapper';
 
-@Entry(LocalStorage.getShared())
+// todo useSharedStorage ???
+// TODO(MingKE): 组件化
+@Entry({ routeName: '', storage: LocalStorage.getShared() })
 @Component
 struct Index {
   // @State showRiseAnimationOne: boolean = false
@@ -16,7 +18,7 @@ struct Index {
         .onAppear(() => {
           this.pageStack.pushPathByName(AppPageName.testPage, null)
         })
-        .hideNavBar(true)// .hideTitleBar(true)
+        .hideNavBar(true)
         .mode(NavigationMode.Stack)
       // .margin({ top: this.topRectHeight })
 
